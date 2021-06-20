@@ -2,7 +2,7 @@ function onlyUnique(value, index, self) {
   return self.indexOf(value) === index;
 }
 
-function store() {
+function storeViewedVideos() {
   if (sessionStorage.viewedItems && localStorage.dumpertPlusPlusViewedItems) {
     const sessionViewedItemsArray = sessionStorage.viewedItems.split(',')
     const localViewedItemsArray = localStorage.dumpertPlusPlusViewedItems.split(',')
@@ -21,8 +21,21 @@ function store() {
     sessionStorage.viewedItems = localStorage.dumpertPlusPlusViewedItems
   }
 }
-store()
 
-window.addEventListener('beforeunload', store)
-window.addEventListener('click', store)
+function scrollToLocation(){
+  window.scrollTo(0,  sessionStorage.scrollLocation)
+}
+
+function setScrollLocation(){
+  const scroll = this.scrollY
+  if(scroll != 0) {
+    sessionStorage.scrollLocation = scroll
+  }
+}
+window.addEventListener('beforeunload', storeViewedVideos)
+window.addEventListener('load', scrollToLocation)
+window.addEventListener('click', storeViewedVideos)
+window.addEventListener("scroll", setScrollLocation)
+window.addEventListener('fullscreenchange', scrollToLocation)
+storeViewedVideos()
 // console.log('dikke tieten')
