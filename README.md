@@ -1,6 +1,12 @@
-# Dumpert fix
+# Dumpert++
 
-Firefox and chrome (and more?) plugin to sync Dumpert view status between browser tabs and sessions.
+Firefox and chrome (and more?) plugin to fix Dumpert.
+
+## Features
+
+* Sync Dumpert view status between browser tabs and sessions.
+* Fix reset of scroll location on full-screen.
+* [Feature request](https://github.com/bierteam/dumpertPlusPlus/issues/new)
 
 ## Installing
 

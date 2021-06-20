@@ -23,13 +23,13 @@ function storeViewedVideos() {
 }
 
 function scrollToLocation(){
-  window.scrollTo(0,  sessionStorage.scrollLocation)
+  window.scrollTo(0,  sessionStorage.dumpertPlusPlusScrollLocation)
 }
 
 function setScrollLocation(){
   const scroll = this.scrollY
   if(scroll != 0) {
-    sessionStorage.scrollLocation = scroll
+    sessionStorage.dumpertPlusPlusScrollLocation = scroll
   }
 }
 window.addEventListener('beforeunload', storeViewedVideos)

@@ -2,19 +2,15 @@
 
   "manifest_version": 2,
   "name": "Dumpert++",
-  "version": "0.2.1",
+  "version": "0.2.2",
 
-  "description": "Fix dumpert view status",
+  "description": "Fix dumpert view status and scroll location bug",
 
-  "permissions": [
-    "storage"
-  ],
+  "permissions": ["storage"],
   "content_scripts": [
     {
       "matches": ["*://*.dumpert.nl/*"],
-      "js": [
-        "fix.js"
-      ],
+      "js": ["fix.js"],
       "run_at": "document_start"
     }
   ]
