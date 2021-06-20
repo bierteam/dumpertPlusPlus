@@ -33,7 +33,6 @@ function setScrollLocation(){
   }
 }
 window.addEventListener('beforeunload', storeViewedVideos)
-window.addEventListener('load', scrollToLocation)
 window.addEventListener('click', storeViewedVideos)
 window.addEventListener("scroll", setScrollLocation)
 window.addEventListener('fullscreenchange', scrollToLocation)
