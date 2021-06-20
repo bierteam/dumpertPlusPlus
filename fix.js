@@ -10,6 +10,7 @@ function store() {
     const uniqueArray = mergedArray.filter(onlyUnique)
     const uniqueString = uniqueArray.toString()
     localStorage.dumpertPlusPlusViewedItems = uniqueString
+    sessionStorage.viewedItems = localStorage.dumpertPlusPlusViewedItems
   }
   
   if (sessionStorage.viewedItems && !localStorage.dumpertPlusPlusViewedItems) {
