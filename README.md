@@ -1,6 +1,6 @@
 # Dumpert++
 
-Firefox and chrome (and more?) plugin to fix Dumpert.
+Browser plugin to fix [Dumpert](https://dumpert.nl).
 
 ## Features
 
@@ -10,9 +10,17 @@ Firefox and chrome (and more?) plugin to fix Dumpert.
 
 ## Installing
 
-Firefox: Add a temporary extention: ```about:debugging#/runtime/this-firefox```
+* [Firefox](https://addons.mozilla.org/nl/firefox/addon/dumpert/)
 
-Chrome: Enable developer mode and load unpacked plugin: ```chrome://extensions/```
+## Installing from source
+
+1. Clone or download this repo
+2. 
+   * Firefox: Add a temporary extention: ```about:debugging#/runtime/this-firefox```
+   * Chrome: Enable developer mode and load unpacked plugin: ```chrome://extensions```
+   * Brave: Enable developer mode and load unpacked plugin: ```brave://extensions```
+   * Opera: Enable developer mode and load unpacked plugin: ```opera://extensions```
+   * Edge: Enable developer mode and load unpacked plugin: ```edge://extensions```
 
 ## Authors
 
