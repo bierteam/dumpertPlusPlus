@@ -1,2 +1,5 @@
 .DS_Store
 web-ext-artifacts
+worker/dist
+worker/node_modules
+worker/worker
