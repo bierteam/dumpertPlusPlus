@@ -4,8 +4,6 @@ import { v4 as uuidv4, validate } from 'uuid'
 
 const router = Router()
 
-const allowed = /^[0-9a-f _,]*$/g
-
 router.get('/', () => {
   return json('Hello World!', { status: 200 })
 })
@@ -21,7 +19,7 @@ router.get('/:uuid', async request => {
 
 router.put('/:uuid', async request => {
   const body = await request.json()
-  const safe = await allowed.test(body.dumpertPlusPlusViewedItems)
+  const safe =  validateViewedItems(body.dumpertPlusPlusViewedItems)
 
   if (validate(request.params.uuid) && safe) {
     await SYNC.put(request.params.uuid, body.dumpertPlusPlusViewedItems)
@@ -34,7 +32,7 @@ router.put('/:uuid', async request => {
 router.post('/', async request => {
   const body = await request.json()
   const uuid = await uuidv4()
-  const safe = await allowed.test(body.dumpertPlusPlusViewedItems)
+  const safe = validateViewedItems(body.dumpertPlusPlusViewedItems)
 
   if (safe) {
     await SYNC.put(uuid, body.dumpertPlusPlusViewedItems)
@@ -47,6 +45,11 @@ router.post('/', async request => {
 router.all('*', () => {
   return json('Not found', { status: 404 })
 })
+
+function validateViewedItems(userInput) {
+  const allowed = /^[0-9a-f _,]*$/g
+  return allowed.test(userInput)
+}
 
 addEventListener('fetch', event =>
   event.respondWith(router.handle(event.request))
