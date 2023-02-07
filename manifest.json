@@ -1,13 +1,10 @@
 {
-
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Dumpert++",
-  "version": "0.2.3",
-  "author": "Bier Team",
+  "version": "0.3.2",
+  "author": "BierTeam",
   "homepage_url": "https://github.com/bierteam/dumpertPlusPlus",
-
   "description": "Fix dumpert view status and scroll location bug",
-
   "permissions": ["storage"],
   "content_scripts": [
     {
@@ -15,5 +12,14 @@
       "js": ["fix.js"],
       "run_at": "document_start"
     }
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{7db800a4-23b0-49fa-b84d-ea26ef6fcd02}" 
+    }
+  },
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
 }
